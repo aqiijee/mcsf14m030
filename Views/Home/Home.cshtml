@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+   
+
+</head>
+<body>
+    <input id="i1" type="hidden" value="0"/>
+    <div>
+        <a href="/Home/Login" onclick="return fun();">Login</a>
+        <form class="navbar-form navbar-left pull-right" role="search" method="post" action="/Home/login">
+            <fieldset>
+                <input Id="1"class ="form-control" name="emailPhone" type="text" placeholder="email/phone" />
+
+                <input class="form-control" name="password" type="password" placeholder="password" />
+                <button class="btn btn-custom" type="submit" style="background-color:#3cb1ed">Login</button>
+            </fieldset>
+        </form>
+    </div>
+   
+   
+</body>
+</html>

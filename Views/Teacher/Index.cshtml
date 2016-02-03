@@ -1,0 +1,59 @@
+﻿@{
+   // ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using EadTermProject.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    @section Classes
+{
+        <div style="background-image: url(/images/i2.jpg); color: #a9edf9;margin-left:20px;margin-right:20px ;height:100%">
+            <br />
+            <center><h1 style="color: orchid; font-style: oblique; ">Classes</h1></center>
+            @if (ViewBag.Classes != null)
+            {
+                foreach (Class c in ViewBag.Classes)
+                {
+                    <center><a style=" color: #a9edf9" href="/Teacher/Class?Id=@c.Id"><h3> @c.Name</h3> </a></center>
+                    <br />
+
+                }
+            }
+            <center><a href="/Teacher/AddClass" style="color: orchid; font-style: oblique; ">Add Classes</a></center>
+
+            <br />
+            <br />
+            <br />
+
+        </div>
+
+    }
+ 
+    @section Post
+{
+       
+
+    }
+
+
+
+
+
+
+</body>
+</html>

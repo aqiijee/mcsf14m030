@@ -1,0 +1,146 @@
+﻿@{
+   // Layout = null;
+}
+@model EadTermProject.Models.User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignUp</title>
+    <script src="~/Scripts/jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+      
+    </style>
+    <script>
+      
+
+        $(document).ready(function () {
+            var v1 ;
+            var v2 ;
+            var v3 ;
+            var v4 ;
+            var v5 ;
+            var v6 ;
+            var v7 ;
+            $("#b1").click(function () {
+                 v1 = $("#Name").val();
+                v2 = $("#Email").val();
+                v3 = $("#Password").val();
+                 v4 = $("#ConfirmPassword").val();
+                v5 = $("#Role").val();
+                v6 = $("#Gender").val();
+               v7= $("#Dob").val();
+                if (v1 != "") {
+                    
+                    if(v2!="")
+                    {
+                        if(v3!="")
+                        {
+                            if(v4!="")
+                            {
+                                if(v5!="")
+                                {
+                                    if(v6!="")
+                                    {
+                                        if(v7!=null)
+                                        {
+                                            alert("end");
+                                        }
+                                        else{
+                                            alert("Select Date of Birth");
+                                        }
+                                    }
+                                    else{
+                                        alert("Select Gender");
+                                    }
+                                }
+                                else{
+                                    alert("Select Role");
+                                }
+                            }
+                            else{
+                                alert("ReEnter Password for confirmation");
+                            }
+                        }
+                        else{
+                            alert("Password is not Provided");
+                        }
+
+                    }
+                    else{
+                        alert("Email is not Provided");
+                    }
+                }
+                else
+                {
+                    alert("UserName is not Provided");
+                    $("body").Reload();
+                }
+                    
+                   
+            });
+        });
+    </script>
+</head>
+<body>
+   @section SignUp{
+    
+    
+
+        <div style="background-image: url(/images/i2.jpg);height:720px; width: 400px; padding-top:0px;margin-top:20px;border-color:#17134b;border:solid;border-width:1px" class="center-block">
+
+
+            <form name="SignUp" action="/Home/Save" method="post" id="signUp" style="color:white;margin-left:30px;margin-right:30px;">
+                <h1 style="font-size: 65px; margin-left: 50px; color: #a9edf9">SignUp</h1>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">UserName:</label>
+                    <input type="text" class="form-control" id="Name" name="UserName">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">Email:</label>
+                    <input type="email" class="form-control" id="Email" name="Email">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="Password" name="Password">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">Confirm Password:</label>
+                    <input type="password" class="form-control" id="ConfirmPassword" name="Password">
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">Role:</label>
+                    <select class="form-control" id="Role" name="Role">
+                        <option value=""></option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">Gender:</label>
+                    <select class="form-control" id="Gender" name="Gender">
+                        <option  value=""></option>
+                        <option  value="Male">Male</option>
+                        <option  value="Female">Female</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label style="font-size: 20px; color: #a9edf9" for="usr">Date of Birth:</label>
+                    
+                    <input type="date" class="form-control" id="Dob" name="text">
+                </div>
+                <input type="submit" class="btn btn-info" value="SignIn" id="b1" style="margin-left:130px">
+
+
+
+            </form>
+
+        </div>
+
+
+   }
+</body>
+</html>

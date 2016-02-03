@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "AddClass";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddClass</title>
+    <script src="~/Scripts/jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+      
+
+        #i3:hover {
+            border-bottom: 1px dotted #c1c1c1;
+            color: #FFFF00;
+        }
+
+
+
+       
+    </style>
+   
+
+       
+</head>
+<body>
+    @section AddClass{
+        <form name="AddClass" action="/Teacher/SaveClass" method="post"   >
+            <input style="border:1px solid #BBBBBB; margin:1px; padding:2px; width: 220px; color:#000000; background-color:#FDFBFB" type="hidden" name="Id" size="20">
+
+            <input style="border:1px solid #BBBBBB; margin:1px; padding:2px; width: 220px; color:#000000; background-color:#FDFBFB" type="text" name="Name" size="20">
+
+            <input id="i3"style="border:1px solid #BBBBBB; margin:1px; padding:2px; width: 220px; color:#000000; background-color:#FDFBFB" type="submit" value="AddClass" size="20">
+
+        </form>
+    }
+</body>
+</html>
+
+

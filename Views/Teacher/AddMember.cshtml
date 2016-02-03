@@ -1,0 +1,81 @@
+﻿@{
+    // ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@using EadTermProject.Models;
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+@section  viewUser{
+    <div class="container">
+        <center><h1 style="color:darkgoldenrod">User</h1></center>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        UserId
+                    </th>
+                    <th>
+                        UserName
+                    </th>
+                    <th>
+                        UserEmail
+                    </th>
+                    <th>
+                        UserPassword
+                    </th>
+                    <th>
+                        Dob
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>Select to Add
+                    </th>
+                </tr>
+            </thead>
+            @foreach (User u in ViewBag.Users)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            @u.Id
+                        </td>
+                        <td>
+                            @u.UserName
+                        </td>
+                        <td>
+                            @u.Email
+                        </td>
+                        <td>
+                            @u.Password
+                        </td>
+                        <td>
+                            @u.Dob
+                        </td>
+                        <td>
+                            @u.Gender
+                        </td>
+                        <td>
+                            @u.Status
+                        </td>
+                        <td>
+                            <a href="@("/Teacher/Add?Id="+u.Id)">Add</a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+        <center><a href="/Teacher/Index" style="color: orchid; font-style: oblique; ">Back To Class</a></center>
+
+    </div>
+}

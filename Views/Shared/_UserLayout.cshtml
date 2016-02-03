@@ -1,0 +1,108 @@
+﻿@model EadTermProject.Models.User
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title> @Model.Role </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+    </head>
+<body style="background-image: url(/images/i1.jpg);  ">
+    <nav class="navbar navbar-inverse container-fluid" role="navigation" style=" height:52px ">
+        <div class="navbar-header ">
+            <a class=" navbar-brand" href="/Home/Index" style="color: #a9edf9; font-style: italic; text-decoration: dashed">
+                <span style="color: #a9edf9" class="glyphicon glyphicon-education glyphicon-align-left" aria-hidden="true"></span>StudentHub
+            </a>
+
+        </div>
+        <center class="navbar-cnter">
+            <ul class=" nav navbar-nav">
+                <li class="active">
+
+                    <a href="/@Model.Role/Index" style="color: #a9edf9; font-style: italic; text-decoration: dashed; ">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                    </a>
+                </li>
+                <li>
+
+                    <div style="margin-top:7px;margin-left:3px">
+                        <a href="/@Model.Role/Profile" style="color: #a9edf9; background-color: transparent" title="Profile">
+                            @{
+                                String path = "/Images/Profile/ProfileImg_" + Model.Id + ".jpg";
+                            }
+                            <span>
+                                <img src="@path" style="width:35px;height:35px">
+                            </span>
+                            @Model.UserName
+
+                        </a>
+                    </div>
+
+                </li>
+                <li>
+
+                    <a href="/Home/Logout" style="color: #a9edf9; font-style: italic; text-decoration: dashed; ">
+                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout
+                    </a>
+                </li>
+            </ul>
+        </center>
+
+        <div>
+            <form class="navbar-form navbar-left pull-right" role="search" method="post">
+                <fieldset>
+                    <input class="form-control" name="username" type="text" placeholder="Subject" />
+
+                    <button class="btn btn-custom" type="submit" style="background-color:#3cb1ed">Search</button>
+
+                </fieldset>
+            </form>
+
+
+        </div>
+
+
+
+
+
+    </nav>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+    @RenderSection("viewUser", required: false)
+    <div class="row">
+        <div class="col-md-3">
+            @RenderSection("Classes", required: false)
+
+        </div>
+        <div class="col-md-6">
+            <div>
+                @RenderSection("Post", required: false)
+            </div>
+            
+        </div>
+        <div class="col-md-3">
+            @RenderSection("Member", required: false)
+
+        </div>
+    </div>
+    <div class="center-block" style="height:200px;width:160px;align-content:center;padding-top:250px">
+        @RenderSection("AddClass", required: false)
+    </div>
+</body>
+
+</html>
